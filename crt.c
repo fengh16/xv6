@@ -88,4 +88,5 @@ int sys_setcrtcc(void)
     int shift = (wdcolor << 12) | (bgcolor << 8);
     crt[pos++] = (c & 0xff) | shift;
     crt[pos] = c;
+    return 0;
 }

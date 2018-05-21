@@ -29,6 +29,7 @@ int dir(char*);
 int setenv(int, char*, char**, unsigned int);
 int getenv(int, void*, char*);
 int cmplt(char*);
+int tasklist();
 
 // CRT operations
 int getcrtc(int, int);
@@ -38,6 +39,11 @@ int setcurpos(int);
 int geteditstatus();
 int seteditstatus(int);
 int setcrtcc(int,int,int,int);
+
+// print
+void cprintf(int, int, int, char*, ...);
+void printf(int, char*, ...);
+char* gets(char*, int);
 
 // file operation
 int stat(char*, struct stat*);
