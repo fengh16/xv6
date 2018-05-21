@@ -28,6 +28,7 @@ OBJS = \
 	uart.o\
 	vectors.o\
 	vm.o\
+        crt.o\
 
 # Cross-compiling (e.g., on Mac OS X)
 # TOOLPREFIX = i386-jos-elf
@@ -185,6 +186,7 @@ UPROGS=\
 	_loadenv\
 	_calculator\
 	_tasklist\
+	_nano\
 
 fs.img: mkfs $(UPROGS)
 	./mkfs fs.img README ENV ENV_TEST STARTCOMMAND $(UPROGS)
