@@ -10,11 +10,12 @@ main(int argc, char *argv[])
   for(i = 1; i < argc; i++)
   {
 	int j;
-	for(j = strlen(argv[i])-1; j >= 0; j--)
+	for(j = 0; j <= strlen(argv[i])-1; j++)
 	{
-		printf(1, "%c", argv[i][j]);
+		if(argv[i][j] != '+')
+			printf(1, "%c", argv[i][j]);
 	}     		
-    	printf(1, "%s", i+1 < argc ? " " : "\n");
+    	printf(1, "%s", i+1 < argc ? "" : "\n");
   } 
   exit();
 }
