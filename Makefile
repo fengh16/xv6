@@ -28,6 +28,7 @@ OBJS = \
 	uart.o\
 	vectors.o\
 	vm.o\
+        crt.o\
 
 # Cross-compiling (e.g., on Mac OS X)
 # TOOLPREFIX = i386-jos-elf
@@ -162,6 +163,9 @@ mkfs: mkfs.c fs.h
 UPROGS=\
 	_cat\
 	_echo\
+	_echo_reversal\
+	_echo_connect\
+	_echo_sub\
 	_forktest\
 	_grep\
 	_init\
@@ -181,7 +185,8 @@ UPROGS=\
 	_showenv\
 	_loadenv\
 	_calculator\
-	
+	_tasklist\
+	_nano\
 
 fs.img: mkfs $(UPROGS)
 	./mkfs fs.img README ENV ENV_TEST STARTCOMMAND $(UPROGS)
@@ -249,7 +254,7 @@ qemu-nox-gdb: fs.img xv6.img .gdbinit
 # check in that version.
 
 EXTRA=\
-	mkfs.c ulib.c user.h cat.c echo.c forktest.c grep.c kill.c\
+	mkfs.c ulib.c user.h cat.c echo.c echo_reversal.c echo_connect.c echo_sub.c forktest.c grep.c kill.c\
 	ln.c ls.c mkdir.c rm.c stressfs.c usertests.c wc.c zombie.c\
 	printf.c umalloc.c setenv.c showenv.c loadenv.c test.c\
 	README dot-bochsrc *.pl toc.* runoff runoff1 runoff.list\
